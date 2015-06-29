@@ -56,45 +56,116 @@
 						</select>
 					</div>
 				</div>
-			
-			
+
+
 				<div class="row">
 					<div class="form-group">
-						<label for=""InputFullName"">Full name<sup>*</sup></label> 
-						<input type="text" class="form-control input-sm" id="InputFullName"
+						<label for=""InputFullName"">Full name<sup>*</sup></label> <input
+							type="text" class="form-control input-sm" id="InputFullName"
 							name="InputFullName" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group">
-						<label for="InputEmail">Short name<sup>*</sup></label> 
-						<input type="text" class="form-control input-sm" id="InputShortName"
-							name=""InputShortName"" required>
+						<label for="InputEmail">Short name<sup>*</sup></label> <input
+							type="text" class="form-control input-sm" id="InputShortName"
+							name="" InputShortName"" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group">
-						<label for="InputEmail">Serial No<sup>*</sup></label>
-						 <input type="text" class="form-control input-sm" id="InputSerialNo"
+						<label for="InputEmail">Serial No<sup>*</sup></label> <input
+							type="text" class="form-control input-sm" id="InputSerialNo"
 							name="InputSerialNo" required>
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group">
-						<label for="InputEmail">Serial ID<sup>*</sup></label>
-						 <input type="text" class="form-control input-sm" id="InputSerialID"
+						<label for="InputEmail">Serial ID<sup>*</sup></label> <input
+							type="text" class="form-control input-sm" id="InputSerialID"
 							name="InputSerialID" required>
 					</div>
 				</div>
-				<div class="col-lg-8">
-				
-				
-				
-				
-				</div>
+			</div>
+			<div class="col-lg-8">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th style="width: 10%">Level</th>
+							<th style="width: 60%">Meta Data</th>
+							<th style="width: 10%">Optional</th>
+							<th style="width: 10%">Primary</th>
+						</tr>
+					</thead>
+					<tbody id="insertLevel">
+						<tr>
+							<td>Level 1</td>
+							<td><input style="width: 100%" type="text" id="metedata_1"
+								name="metedata_1" /></td>
+							<td><input type="checkbox" id="opt_1" name="opt_1" /></td>
+							<td><input type="checkbox" id="pri_1" name="pri_1" /></td>
+						</tr>
+						<tr>
+							<td>Level 2</td>
+							<td><input style="width: 100%" type="text" id="metedata_2"
+								name="metedata_2" /></td>
+							<td><input type="checkbox" id="opt_2" name="opt_2" /></td>
+							<td><input type="checkbox" id="pri_2" name="pri_2" /></td>
+						</tr>
+						<tr>
+							<td>Level 3</td>
+							<td><input style="width: 100%" type="text" id="metedata_3"
+								name="metedata_3" /></td>
+							<td><input type="checkbox" id="opt_3" name="opt_3" /></td>
+							<td><input type="checkbox" id="pri_3" name="pri_3" /></td>
+						</tr>
+						<tr>
+							<td>Level 4</td>
+							<td><input style="width: 100%" type="text" id="metedata_4"
+								name="metedata_4" /></td>
+							<td><input type="checkbox" id="opt_4" name="opt_4" /></td>
+							<td><input type="checkbox" id="pri_4" name="pri_4" /></td>
+						</tr>
+						<tr>
+							<td>Level 5</td>
+							<td><input style="width: 100%" type="text" id="metedata_5"
+								name="metedata_5" /></td>
+							<td><input type="checkbox" id="opt_5" name="opt_5" /></td>
+							<td><input type="checkbox" id="pri_5" name="pri_5" /></td>
+						</tr>
+						<tr>
+							<td>Level 6</td>
+							<td><input style="width: 100%" type="text" id="metedata_6"
+								name="metedata_6" /></td>
+							<td><input type="checkbox" id="opt_6" name="opt_6" /></td>
+							<td><input type="checkbox" id="pri_6" name="pri_6" /></td>
+						</tr>
+						
+					</tbody>
+
+				</table>
+				<input type="button" onclick="addlevel()" value="Add level"
+					class="btn btn-primary btn-sm pull-right" /> 
+					<input type="hidden" value="6" name="levelCount" id="levelCount"/>
+
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function addlevel() {
+					var count  = document.getElementById('levelCount').value;
+					 var insertPlace = document.getElementById('insertLevel');
+					var i = parseInt(count)+1;
+					var ins = '<tr>'+
+						'<td>Level '+i+'</td>'+
+						'<td><input style="width: 100%" type="text" id="metedata_'+i+'" name="metedata_'+i+'" /></td>'+
+						'<td><input type="checkbox" id="opt_'+i+'" name="opt_'+i+'" /></td>'+
+						'<td><input type="checkbox" id="pri_'+i+'" name="pri_'+i+'" /></td>'+
+					'</tr>';
+					insertPlace.innerHTML += ins;
+					document.getElementById('levelCount').value = i; 
+		}
+	</script>
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>
