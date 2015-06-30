@@ -140,33 +140,114 @@
 							<td><input type="checkbox" id="opt_6" name="opt_6" /></td>
 							<td><input type="checkbox" id="pri_6" name="pri_6" /></td>
 						</tr>
-						
+
 					</tbody>
 
 				</table>
-				<input type="button" onclick="addlevel()" value="Add level"
-					class="btn btn-primary btn-sm pull-right" /> 
-					<input type="hidden" value="6" name="levelCount" id="levelCount"/>
+				<input type="button" value="Submit"
+					class="btn btn-danger btn-sm pull-right" style="margin-left: 10px;"
+					onclick="AJAXCALL()" /> <input type="button" onclick="addlevel()"
+					value="Add level" class="btn btn-primary btn-sm pull-right" /> <input
+					type="hidden" value="6" name="levelCount" id="levelCount" />
 
 			</div>
 		</div>
+
+		<!-- Modal HTML -->
+
+		<div id="myModal" class="modal fade">
+
+			<div class="modal-dialog">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+
+						<h4 class="modal-title">XML Confirmation</h4>
+
+					</div>
+
+					<div class="modal-body">
+
+						<textarea id='xmlPanel' class="form-control" rows="5"
+							readonly="true" style="border: none;"></textarea>
+
+					</div>
+
+					<div class="modal-footer">
+
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+						<button type="button" class="btn btn-primary">Save
+							changes</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
 	</div>
 	<script type="text/javascript">
+		//Add New Lael Option using Javascript 
 		function addlevel() {
-					var count  = document.getElementById('levelCount').value;
-					 var insertPlace = document.getElementById('insertLevel');
-					var i = parseInt(count)+1;
-					var ins = '<tr>'+
-						'<td>Level '+i+'</td>'+
-						'<td><input style="width: 100%" type="text" id="metedata_'+i+'" name="metedata_'+i+'" /></td>'+
-						'<td><input type="checkbox" id="opt_'+i+'" name="opt_'+i+'" /></td>'+
-						'<td><input type="checkbox" id="pri_'+i+'" name="pri_'+i+'" /></td>'+
-					'</tr>';
-					insertPlace.innerHTML += ins;
-					document.getElementById('levelCount').value = i; 
+			var count = document.getElementById('levelCount').value;
+			var insertPlace = document.getElementById('insertLevel');
+			var i = parseInt(count) + 1;
+			var ins = '<tr>'
+					+ '<td>Level '
+					+ i
+					+ '</td>'
+					+ '<td><input style="width: 100%" type="text" id="metedata_'
+					+ i
+					+ '" name="metedata_'
+					+ i
+					+ '" /></td>'
+					+ '<td><input type="checkbox" id="opt_'+i+'" name="opt_'+i+'" /></td>'
+					+ '<td><input type="checkbox" id="pri_'+i+'" name="pri_'+i+'" /></td>'
+					+ '</tr>';
+			insertPlace.innerHTML += ins;
+			document.getElementById('levelCount').value = i;
+		}
+		//Create a pre xml node for validation "what is going with inputs"
+		function createXML() {
+			var timestamp = moment().unix();
+			var version = '<?xml version="1.0" encoding="UTF-8"?>';
+
+			document.getElementById('xmlPanel').innerHTML = +XML.innerHTML;
+			$('#myModal').modal('show');
+
+		}
+
+		function AJAXCALL() {
+			$.ajax({
+				type : "POST",
+				url : "prePairXML",
+
+				//if received a response from the server
+				success : function(data, textStatus, jqXHR) {
+					alert(data)
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					console.log("Something really bad happened " + textStatus);
+					alert(jqXHR.responseText+' '+textStatus);
+				}
+			});
 		}
 	</script>
+	<!-- All Javascript -->
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<!-- Date Time Management lib  -->
+	<script src="js/moment.min.js"></script>
+	<script src="js/moment-timezone-with-data-2010-2020.min.js"></script>
+
+
 </body>
 </html>
