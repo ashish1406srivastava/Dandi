@@ -43,7 +43,8 @@
 		</div>
 	</div>
 	<div class="container">
-		<form method="post" action="#" id="formStatutes" onsubmit="return createXML();">
+		<form method="post" action="#" id="formStatutes"
+			onsubmit="return createXML();">
 			<div class="row">
 				<div class="col-md-4">
 					<div class="row">
@@ -147,7 +148,7 @@
 					</table>
 					<input type="submit" value="Submit"
 						class="btn btn-success btn-sm pull-right"
-						style="margin-left: 10px;"/> <input type="button"
+						style="margin-left: 10px;" /> <input type="button"
 						onclick="addlevel()" value="Add level"
 						class="btn btn-primary btn-sm pull-right" /> <input type="hidden"
 						value="6" name="levelCount" id="levelCount" /> <input
@@ -235,7 +236,7 @@
 			$('#levelCount').val(--i);
 		}
 		//Create a xml using server ajax request
-		
+
 		function createXML() {
 			var form = $('#formStatutes');
 			$.ajax({
@@ -244,7 +245,8 @@
 				data : form.serialize(),
 				//if received a response from the server
 				success : function(data, textStatus, jqXHR) {
-					alert(data)
+					$("#xmlPanel").html(data);
+					$("#myModal").modal('show');
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
 					console.log("Something really bad happened " + textStatus);

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PNode id="23">
+	<startDate>
+		<year>2014</year>
+		<month>4</month>
+		<day>1</day>
+	</startDate>
+	<endDate></endDate>
+	<reference>
+		<statuteID>3</statuteID>
+		<statuteSubDivision id="3">
+			<divisionNumber>43</divisionNumber>
+		</statuteSubDivision>
+		<statuteSubDivision id="2">
+			<divisionNumber>II</divisionNumber>
+		</statuteSubDivision>
+	</reference>
+	<heading>Cash credit</heading>
+	<body>
+49["transfer"50, in relation to a capital asset, includes,—
+(i) the sale50, exchange50 or relinquishment50 of the asset ; or
+(ii) the extinguishment of any rights therein50 ; or
+(iii) the compulsory acquisition thereof under any law ; or
+(iv) in a case where the asset is converted by the owner thereof into, or is treated by him as, stock-in-trade of a business carried on by him, such conversion or treatment ;] 51[or]
+52[(iva) the maturity or redemption of a zero coupon bond; or]
+53[(v) any transaction involving the allowing of the possession of any immovable property to be taken or retained in part performance of a contract of the nature referred to in section 53A54 of the Transfer of Property Act, 1882 (4 of 1882) ; or
+(vi) any transaction (whether by way of becoming a member of, or acquiring shares in, a co-operative society, company or other association of persons or by way of any agreement or any arrangement or in any other manner whatsoever) which has the effect of transferring, or enabling the enjoyment of, any immov-able property.
+55[Explanation 1].—For the purposes of sub-clauses (v) and (vi), "immovable property" shall have the same meaning as in clause (d) of section 269UA.]
+56[Explanation 2.—For the removal of doubts, it is hereby clarified that "transfer" includes and shall be deemed to have always included disposing of or parting with an asset or any interest therein, or creating any interest in any asset in any manner whatsoever, directly or indirectly, absolutely or conditionally, voluntarily or involuntarily, by way of an agreement (whether entered into in India or outside India) or otherwise, notwithstanding that such transfer of rights has been characterised as being effected or dependent upon or flowing from the transfer of a share or shares of a company registered or incorporated outside India;]
+	</body>
+</PNode>

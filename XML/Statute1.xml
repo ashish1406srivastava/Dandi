@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Statute id="3">
+	<country>IND</country>
+	<fullName>Income tax Act, 1961</fullName>
+	<shortName>IT Act</shortName>
+	<serialNo></serialNo>
+	<serialID></serialID>
+	<metadata>
+		<statuteSubDivision>
+			<level>1</level>
+			<name>Chapter</name>
+			<optional>false</optional>
+			<primarySequence>false</primarySequence>
+		</statuteSubDivision>
+		<statuteSubDivision>
+			<level>2</level>
+			<name>Part</name>
+			<optional>true</optional>
+			<primarySequence>false</primarySequence>
+		</statuteSubDivision>
+		<statuteSubDivision>
+			<level>3</level>
+			<name>Section</name>
+			<optional>false</optional>
+			<primarySequence>true</primarySequence>
+		</statuteSubDivision>
+		<statuteSubDivision>
+			<level>4</level>
+			<name>sub-section</name>
+			<optional>true</optional>
+			<primarySequence>false</primarySequence>
+		</statuteSubDivision>
+		<statuteSubDivision>
+			<level>5</level>
+			<name>clause</name>
+			<optional>true</optional>
+			<primarySequence>false</primarySequence>
+		</statuteSubDivision>
+		<statuteSubDivision>
+			<level>6</level>
+			<name>sub-clause</name>
+			<optional>true</optional>
+			<primarySequence>false</primarySequence>
+		</statuteSubDivision>
+	</metadata>
+</Statute>
